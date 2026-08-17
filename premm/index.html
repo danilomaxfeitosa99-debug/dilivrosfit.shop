@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tájékoztató cikk a szellemi frissességet támogató mindennapi szokásokról.">
+  <title>Szellemi Frissesség — Egészség és Életmód</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Design reminder: v103 editorial model — restrained Hungarian wellbeing magazine, natural green accent, no medical claims. */
+    :root { --green: #26785a; --green-deep: #16533c; --green-soft: #e9f5ee; --ink: #2c302d; --paper: #fbfaf6; --sand: #f2efe7; --line: #ded9ce; --amber: #b97827; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--sand); font-family: "Open Sans", Arial, sans-serif; line-height: 1.72; }
+    .masthead { background: var(--paper); border-bottom: 1px solid var(--line); }
+    .masthead__inner, .ticker__inner, main, .footer__inner { width: min(720px, calc(100% - 32px)); margin: 0 auto; }
+    .masthead__inner { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .eyebrow { font-size: 10px; color: var(--green); font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    .brand { margin-top: 3px; color: var(--ink); font: 700 15px/1.35 "Merriweather", Georgia, serif; }
+    .issue { color: #7d807d; font-size: 11px; text-align: right; }
+    .ticker { background: var(--green); color: #fff; overflow: hidden; }
+    .ticker__inner { display: flex; gap: 22px; overflow: hidden; white-space: nowrap; padding: 9px 0; font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+    .ticker span { opacity: .82; }
+    .ticker span:first-child { opacity: 1; }
+    main { padding: 30px 0 44px; }
+    .label { display: inline-block; margin-bottom: 10px; padding: 5px 10px; border-radius: 4px; color: var(--green); background: var(--green-soft); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+    h1, h2, h3 { font-family: "Merriweather", Georgia, serif; color: #242a26; }
+    h1 { margin: 0 0 16px; font-size: clamp(26px, 6vw, 34px); line-height: 1.28; letter-spacing: -.02em; }
+    .dek { margin: 0 0 22px; color: #5d625e; font: italic 17px/1.62 "Merriweather", Georgia, serif; }
+    .byline { display: flex; align-items: center; gap: 11px; padding: 0 0 22px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+    .avatar { display: grid; place-items: center; flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; color: #fff; background: var(--green); font-size: 12px; font-weight: 700; }
+    .byline strong { display: block; font-size: 13px; }
+    .byline small { display: block; margin-top: 2px; color: #7c807d; font-size: 11px; }
+    p { margin: 0 0 22px; font-size: 16px; }
+    p strong { color: #1f2b24; }
+    h2 { margin: 40px 0 14px; font-size: 22px; line-height: 1.42; }
+    .clickable-image { display: block; margin: 30px 0; border-radius: 8px; text-decoration: none; }
+    .clickable-image img { display: block; width: 100%; padding: 4px; border: 3px dashed #62ae88; border-radius: 8px; background: #f9fffb; transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease; }
+    .clickable-image:hover img { border-color: var(--green); box-shadow: 0 12px 28px rgba(31, 101, 72, .16); transform: translateY(-2px); }
+    .fact { margin: 30px 0; padding: 23px 24px; border-left: 4px solid var(--green); border-radius: 7px; background: var(--green-soft); }
+    .fact p { margin: 0; color: #215d45; font-size: 15px; font-weight: 600; }
+    .note { margin: 30px 0; padding: 22px 24px; border-left: 4px solid var(--amber); border-radius: 7px; background: #fff8e9; }
+    .note p { margin: 0; color: #754914; font-size: 14px; }
+    .habits { margin: 20px 0 4px; padding: 0; list-style: none; }
+    .habits li { position: relative; margin: 0 0 15px; padding-left: 24px; font-size: 16px; }
+    .habits li::before { content: ""; position: absolute; top: .66em; left: 2px; width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
+    .cta-wrap { margin: 35px 0; text-align: center; }
+    .cta { display: inline-block; max-width: 100%; padding: 15px 25px; border-radius: 7px; background: var(--green); color: #fff; box-shadow: 0 5px 16px rgba(31, 101, 72, .28); text-decoration: none; font-size: 16px; font-weight: 700; transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease; }
+    .cta:hover { background: var(--green-deep); box-shadow: 0 8px 22px rgba(31, 101, 72, .35); transform: translateY(-1px); }
+    .cta:active { transform: scale(.97); }
+    .cta-note { margin-top: 10px; color: #7b807c; font-size: 11px; }
+    @media (prefers-reduced-motion: no-preference) { .cta { animation: softPulse 2.4s ease-in-out infinite; } }
+    @keyframes softPulse { 0%,100% { box-shadow: 0 5px 16px rgba(31,101,72,.28); } 50% { box-shadow: 0 7px 25px rgba(31,101,72,.42); } }
+    .resource { margin: 38px 0 0; padding: 30px 22px; border: 1px solid #b9dcc8; border-radius: 10px; background: linear-gradient(135deg, #e6f4eb, #f3faf5); text-align: center; }
+    .resource h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.45; }
+    .resource p { margin: 0 0 22px; color: #52605a; font-size: 15px; }
+    .availability { margin: 19px 0 0; color: var(--amber); font-size: 13px; font-weight: 700; text-align: center; }
+    footer { padding: 39px 0; color: #c8cbc8; background: #2a302d; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 30px; padding-bottom: 28px; border-bottom: 1px solid #49504b; }
+    footer h4 { margin: 0 0 10px; color: #fff; font-size: 13px; }
+    footer p, footer li, footer a { color: #c8cbc8; font-size: 11px; line-height: 1.85; }
+    footer p { margin: 0; }
+    footer ul { margin: 0; padding: 0; list-style: none; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .legal { padding-top: 23px; color: #9ea49f; font-size: 10px; line-height: 1.75; }
+    .legal p { color: inherit; font-size: inherit; }
+    .copyright { margin-top: 13px !important; color: #777e78 !important; }
+    @media (max-width: 520px) { .masthead__inner { min-height: 70px; } .issue { display: none; } .footer-grid { grid-template-columns: 1fr; gap: 22px; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div><div class="eyebrow">Egészség & életmód</div><div class="brand">Szellemi Frissesség Magazin</div></div>
+      <div class="issue">Különkiadás<br><span id="date"></span></div>
+    </div>
+  </header>
+  <nav class="ticker" aria-label="Rovatok"><div class="ticker__inner"><span>Memória</span><span>Aktív élet</span><span>Táplálkozás</span><span>Mindennapi rutin</span><span>Jó közérzet</span></div></nav>
+  <main>
+    <article>
+      <span class="label">Mindennapi szokások</span>
+      <h1>A legtöbben egyetlen szokásra figyelnek — pedig lehet, hogy egy másik, ritkán említett rész hiányzik a napi rutinból</h1>
+      <p class="dek">Egy rövid videó bemutatja azt a hétköznapi sorrendet, amelyet sokan észre sem vesznek, amikor a figyelmüket és szellemi frissességüket szeretnék tudatosabban támogatni.</p>
+      <div class="byline"><div class="avatar">SF</div><div><strong>Szellemi Frissesség Szerkesztőség</strong><small>Frissítve: <span id="date-inline"></span> · Olvasási idő: 4 perc</small></div></div>
+
+      <a class="clickable-image" href="https://lp.dilivrosfit.shop/preclick"><img src="images/hero.jpg" alt="Idősebb nő tervezőt ír egy világos budapesti konyhában"></a>
+      <p><strong>Előfordul, hogy egy név vagy egy feladat nem jut azonnal eszébe?</strong> Sokan ilyenkor rögtön egyetlen megoldást keresnek: több rejtvényt, több listát vagy több „agytornát”. A rövid videó azonban egy korábbi kérdéssel kezdődik: <strong>mi történik azzal a néhány perccel, mielőtt egyáltalán nekiállunk?</strong></p>
+      <p>Nem egy titkos összetevőről és nem egy bonyolult rendszerről van szó. A videó azt járja körül, hogyan kapcsolódhat egymáshoz az új élmény, a társas kapcsolat, a mozgás, a pihenés és az a bizonyos <strong>napi sorrend</strong>, amelyről a legtöbb ember egyszerűen megfeledkezik.</p>
+      <div class="fact"><p>„Nem az a legérdekesebb kérdés, mit teszünk a rutinunkba — hanem az, miért éppen abban a sorrendben tesszük.” Ezt a hétköznapi nézőpontot bontja ki a rövid videó.</p></div>
+      <div class="cta-wrap"><a class="cta" href="https://lp.dilivrosfit.shop/preclick">Nézze meg, mi marad ki a legtöbb napi rutinból →</a><div class="cta-note">Rövid, tájékoztató videó · azonnal megnyitható</div></div>
+
+      <h2>Miért nem elég csak „több agytornát” végezni?</h2>
+      <p>A megszokott rutin megnyugtató, de az elme számára értékes lehet, ha időnként új feladatokkal találkozik. Egy új recept, egy útvonal, egy társasjáték vagy néhány idegen nyelvű kifejezés is adhat új impulzust. A videóban azonban nem ez a legmeglepőbb rész.</p>
+      <p>Az érdekesebb kérdés az, <strong>melyik ponton</strong> illesztjük ezeket a napba. A rövid útmutató egy egyszerű, megfigyelhető sorrendet mutat be, amely segít végiggondolni, hogyan lehet a figyelemnek, az ismétlésnek és az új élményeknek valódi helyet teremteni a hétköznapokban.</p>
+      <a class="clickable-image" href="https://lp.dilivrosfit.shop/preclick"><img src="images/crossword.jpg" alt="Keresztrejtvény, dió, áfonya és tea egy faasztalon"></a>
+
+      <h2>Négy kérdés, amelyet a videó egymás után tesz fel</h2>
+      <ul class="habits">
+        <li><strong>Új inger:</strong> mikor találkozott utoljára olyan feladattal, amely valóban felkeltette a kíváncsiságát?</li>
+        <li><strong>Kapcsolódás:</strong> mikor jut hely a napban egy zavartalan beszélgetésre vagy közös programra?</li>
+        <li><strong>Ritmus:</strong> van-e egy rövid, ismételhető átmenet a sűrű nap és a pihenés között?</li>
+        <li><strong>Mozgás:</strong> melyik könnyű, örömteli aktivitást lehetne egy másik napi lépéshez kapcsolni?</li>
+      </ul>
+      <div class="cta-wrap"><a class="cta" href="https://lp.dilivrosfit.shop/preclick">Nézze meg, miért ebben a sorrendben következnek ezek a lépések →</a><div class="cta-note">A videó a teljes napi mintát mutatja meg</div></div>
+
+      <a class="clickable-image" href="https://lp.dilivrosfit.shop/preclick"><img src="images/language.jpg" alt="Idősebb férfi nyelvet tanul egy budapesti könyvtárban"></a>
+      <h2>A videó legváratlanabb része nem egy új feladat</h2>
+      <p>Az új készségek gyakorlása sokféleképpen nézhet ki: egy alkalmazás használatának megtanulása, néhány szó egy idegen nyelven vagy egy zene figyelmes meghallgatása. Mégis, a videó nem azzal foglalkozik elsősorban, <em>mit</em> kell még hozzáadni a naphoz.</p>
+      <p>Inkább azt mutatja meg, hogyan lehet egy már meglévő, egyszerű tevékenységet tudatosabban elhelyezni a napban. Ezért a teljes útmutató rövid, és ezért érdemes a végéig megnézni: a lényegi rész csak azután áll össze, amikor a három hétköznapi elemet egy képpé rendezi.</p>
+      <div class="note"><p><strong>Fontos:</strong> ez az oldal általános életmódbeli tájékoztatást nyújt. Hirtelen jelentkező vagy tartósan romló memória- és koncentrációs panaszok esetén kérjen személyre szabott tanácsot megfelelő szakembertől.</p></div>
+
+      <a class="clickable-image" href="https://lp.dilivrosfit.shop/preclick"><img src="images/grandchild.jpg" alt="Nagypapa unokájával fa kirakót készít"></a>
+      <h2>Az egyik lépés annyira egyszerű, hogy sokan átugorják</h2>
+      <p>A beszélgetések, a családi történetek és a közös játékok természetes módon kapcsolják össze az érzelmeket, a figyelmet és az emlékezést. Mégis, a legtöbb napi tervből éppen az a rövid, nyugodt átmenet hiányzik, amely lehetőséget ad arra, hogy valóban jelen legyünk ezekben a helyzetekben.</p>
+      <p>Ez nem egy plusz feladatlista. A videó azt mutatja be, hogyan lehet egy már meglévő közös pillanatot más szemmel nézni — és miért lehet ez a napi sorrend egyik legértékesebb eleme.</p>
+      <div class="cta-wrap"><a class="cta" href="https://lp.dilivrosfit.shop/preclick">Mutassa meg nekem azt az egy lépést →</a><div class="cta-note">A rövid videóban pontosan ezt bontjuk ki</div></div>
+
+      <a class="clickable-image" href="https://lp.dilivrosfit.shop/preclick"><img src="images/walk.jpg" alt="Aktív idősebb pár sétál a Duna partján Budapesten"></a>
+      <section class="resource" id="guide">
+        <h3>Nézze meg azt a rövid napi sorrendet, amelyről ritkán esik szó</h3>
+        <p>A videó három hétköznapi elemet kapcsol össze. Csak a végén válik világossá, miért nem érdemes őket véletlenszerűen kezelni.</p>
+        <a class="cta" href="https://lp.dilivrosfit.shop/preclick">Videó megnyitása és a teljes sorrend megtekintése →</a>
+        <div class="cta-note">Oktató jellegű tartalom · rövid és azonnal elérhető</div>
+      </section>
+      <p class="availability">A videóban a három elem és a napi sorrend közötti kapcsolat is bemutatásra kerül.</p>
+    </article>
+  </main>
+  <footer>
+    <div class="footer__inner">
+      <div class="footer-grid">
+        <div><h4>Céginformáció</h4><p><strong>SZERZŐDŐ FÉL:</strong> DIGITAL SOLUTIONS LTDA<br><strong>CNPJ:</strong> 31.042.484/0001-65<br><strong>Cím:</strong> Av. Paulista, 1578, Sala 302, CEP 01.310-200, São Paulo/SP<br><strong>Email:</strong> contato@digitalsolutions.com.br</p></div>
+        <div><h4>Információk</h4><ul><li><a href="terms.html">Felhasználási feltételek</a></li><li><a href="privacy.html">Adatvédelmi irányelvek</a></li><li><a href="mailto:contato@digitalsolutions.com.br">Kapcsolat</a></li></ul></div>
+      </div>
+      <div class="legal"><p><strong>JOGI NYILATKOZAT:</strong> Ez az oldal kizárólag általános, oktatási és életmódbeli tájékoztatást nyújt. Nem szolgál diagnózisként, kezelésként vagy személyre szabott egészségügyi tanácsadásként. Ha panasza van, kérjen megfelelő szakmai segítséget.</p><p class="copyright">© 2026 Minden jog fenntartva.</p></div>
+    </div>
+  </footer>
+  <script>
+    const now = new Date().toLocaleDateString('hu-HU', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('date').textContent = now;
+    document.getElementById('date-inline').textContent = now;
+  </script>
+  <script type="text/javascript" src="https://lp.dilivrosfit.shop/pretrack.js?rtkcmpid=6a8359ce3cbf06be9f5a4462"></script>
+</body>
+</html>
